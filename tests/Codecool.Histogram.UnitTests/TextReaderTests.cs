@@ -25,5 +25,22 @@ namespace Codecool.Histogram.UnitTests
             Assert.AreEqual(String.Empty, fileValue);
         }
 
+
+
+
+
+
+
+        [Test]
+        public void Read_WhenTextHasSeveralLines_ShouldReturnProperNumberOfLines()
+        {
+            int ExpectedValue = 33;
+            TextReader textReader = new TextReader("text.txt");
+
+            string fileValue = textReader.Read();
+            int lines = fileValue.Split("\n").Length;
+
+            Assert.AreEqual(ExpectedValue, lines);
+        }
     }
 }
