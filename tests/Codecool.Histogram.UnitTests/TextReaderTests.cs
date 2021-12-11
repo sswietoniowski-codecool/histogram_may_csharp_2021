@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.IO;
 
 namespace Codecool.Histogram.UnitTests
@@ -14,5 +15,15 @@ namespace Codecool.Histogram.UnitTests
 
             Assert.Throws<FileNotFoundException>(() => textReader.Read());
         }
+
+        [Test]
+        public void Read_WhenFileIsEmpty_ShouldReturnEmptyString()
+        {
+            TextReader textReader = new TextReader("empty.txt");
+            string fileValue = textReader.Read();
+
+            Assert.AreEqual(String.Empty, fileValue);
+        }
+
     }
 }
