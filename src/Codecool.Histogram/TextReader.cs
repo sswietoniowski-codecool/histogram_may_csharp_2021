@@ -31,7 +31,7 @@ namespace Codecool.Histogram
             {
                 resultBuilder.Append($"{strCurrentLine}\n");
             }
-            return resultBuilder.ToString();
+            return resultBuilder.ToString().TrimEnd();
         }
     }
 }
