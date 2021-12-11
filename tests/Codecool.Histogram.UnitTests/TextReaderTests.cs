@@ -25,9 +25,16 @@ namespace Codecool.Histogram.UnitTests
             Assert.AreEqual(String.Empty, fileValue);
         }
 
+        [Test]
 
+        public void Read_WhenTextIsOneLine_ShouldReturnContentAsString()
+        {
+            TextReader textReader = new TextReader("test.txt");
+            string expectedValue = "Harry Potter and the Sorcerer's Stone";
+            string fileValue = textReader.Read();
 
-
+            Assert.AreEqual(expectedValue, fileValue);
+        }
 
 
 
